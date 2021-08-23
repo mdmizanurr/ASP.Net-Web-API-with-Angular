@@ -1,0 +1,29 @@
+<div class="form-froup row">
+
+  <div>
+    <p hidden>{{ID}}</p>
+  </div>
+
+  <label class="col-sm-2 col-form-label">Name</label>
+  <div class="col-sm-10" ><span>Required (Min: 3 Character)</span>
+    <input type="text" class="form-control" [(ngModel)]="Name"
+    placeholder="Enter Employee Name" >
+
+  </div>
+
+  <label class="col-sm-2 col-form-label">Address</label>
+  <div class="col-sm-10"><span>Required (Min: 10 Character)</span>
+    <input type="text" class="form-control" [(ngModel)]="Address"
+    placeholder="Enter Address" required minlength="10">
+  </div>
+
+  <label class="col-sm-2 col-form-label">Date of Birth</label>
+  <div class="col-sm-10">
+     <input type="date"  [(ngModel)]="DoB" > <span> {{DoB | date:'dd-MM-yy'}} </span>
+  </div>
+
+</div>
+
+<button (click)="addEmployee()" *ngIf="emp.ID==0" class="btn btn-primary ">Add</button>
+<button (click)="updateEmployee()" *ngIf="emp.ID!=0" class="btn btn-primary " >Update</button>
+
